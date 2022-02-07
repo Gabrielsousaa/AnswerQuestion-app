@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <%- include('partials/favicon.ejs'); -%>
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs'); -%>
+    <div class="container">
+        <hr>
+        <h1>Perguntas</h1>
+        <hr>
+        <a href="/question" class="btn btn-primary">Perguntar</a>
+        <hr>
+        <% questions.forEach(question=> { %>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <h3>
+                    <%= question.title %>
+                </h3>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" href='/question/<%= question.id %>'>Responder</a>
+            </div>
+        </div>
+
+        <% }) %>
+
+    </div>
+</body>
+
+
+<%- include('partials/footer.ejs'); -%>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perguntar</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <%- include('partials/favicon.ejs'); -%>
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs'); -%>
+        <div class="container">
+            <div class="card" id="formulario">
+                <div class="card-header">
+                    <h3>Realizar Pergunta</h3>
+                </div>
+                <div class="card-body">
+                    <hr>
+                    <form method="POST" action="/saveQuestion">
+                        <label>Título</label>
+                        <input class="form-control" type="text" placeholder="Título" name="title">
+                        <br>
+                        <label>Pergunta</label>
+                        <textarea class="form-control" placeholder="Descreva sua pergunta"
+                            name="description"></textarea>
+                        <br>
+                        <button class="btn btn-primary">Perguntar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+<%- include('partials/footer.ejs'); -%>
